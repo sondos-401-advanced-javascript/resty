@@ -31,10 +31,22 @@ class Form extends React.Component{
                 <input className="method" type="text" name="url" onChange={this.handlerUrl}/>
                      </label>
                 <div className="second">
-                <input className="method" type="radio" name="method" onChange={this.handlerMethod} value="get"/>GET
-                <input className="method" type="radio" name="method" onChange={this.handlerMethod} value="post"/>POST
-                <input className="method" type="radio" name="method" onChange={this.handlerMethod} value="put"/>PUT
-                <input className="method" type="radio" name="method" onChange={this.handlerMethod} value="delete"/>DELETE
+                    <label>
+                    <input className="method" type="radio" name="method" onChange={this.handlerMethod} value="get"/>
+                    <span>GET</span>
+                    </label>
+                    <label>
+                    <input className="method" type="radio" name="method" onChange={this.handlerMethod} value="post"/>
+                    <span>POST</span>
+                    </label>
+                    <label>
+                    <input className="method" type="radio" name="method" onChange={this.handlerMethod} value="put"/>
+                    <span>PUT</span>
+                    </label>
+                    <label>
+                    <input className="method" type="radio" name="method" onChange={this.handlerMethod} value="delete"/>
+                    <span>DELETE</span>
+                    </label>
                 </div>
                 
                 <button type="submit" >GO!</button>
