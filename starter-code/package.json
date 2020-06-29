@@ -4,6 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "homepage":"https://sondos-401-advanced-javascript.github.io/resty",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.3",
@@ -23,24 +24,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "kcd-scripts lint"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
-  "eslintConfig": {
-    "extends": "./node_modules/kcd-scripts/eslint.js",
-    "rules": {
-      "react/prop-types": "off",
-      "react/no-adjacent-inline-elements": "off",
-      "import/no-unassigned-import": "off",
-      "import/named": "off",
-      "testing-library/no-dom-import": "off"
-    }
-  },
-  "eslintIgnore": [
-    "node_modules",
-    "coverage",
-    "dist",
-    "*.d.ts"
-  ],
   "browserslist": {
     "production": [
       ">0.2%",
