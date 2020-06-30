@@ -14,9 +14,14 @@ class App extends React.Component {
     this.state = {
     }
   }
-  handelForm (data){
+  // handelForm(data) {
+  //   let Headers = { 'Content-Type': 'application/json' };
+  //   console.log('data =====',data);
+  //   this.setState({ Headers, Response: {data} });
+  // }
+  handelForm = (data,count,results) => {
     let Headers = { 'Content-Type': 'application/json' };
-    this.setState({ Headers, Response: { data } });
+    this.setState({count,results, Headers, Response: { data } });
   }
 
   render() {
@@ -24,7 +29,7 @@ class App extends React.Component {
       <React.Fragment>
         <Header />
         <Form handler={this.handelForm} />
-        <Results Response={this.state.Response} Header={this.state.Headers} />
+        <Results count={this.state.count} results={this.state.results} Response={this.state.Response} Header={this.state.Headers} />
         <Footer />
       </React.Fragment>
     );

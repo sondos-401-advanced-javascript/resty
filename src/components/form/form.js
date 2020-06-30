@@ -19,7 +19,9 @@ class Form extends React.Component {
 
       let raw = await fetch(this.state.url); 
       let data = await raw.json();
-      this.props.handler(data);
+      let count = data.count;
+      let results = data.results;
+      this.props.handler(data,count,results);
       // let url = '';
       // let method = '';
     }
