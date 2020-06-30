@@ -9,33 +9,25 @@ class Form extends React.Component {
     this.state = {
       url: '',
       method: '',
-      request: {},
     };
   }
 
-  handleSubmit = e => {
+  handleSubmit =async e => {
     e.preventDefault();
 
     if ( this.state.url && this.state.method ) {
 
-      // Make an object that would be suitable for superagent
-      let request = {
-        url: this.state.url,
-        method: this.state.method,
-      };
-
-      // Clear old settings
-      let url = '';
-      let method = '';
-
-      this.setState({request, url, method});
-      // e.target.reset();
-
+      let raw = await fetch(this.state.url); 
+      let data = await raw.json();
+      this.props.handler(data);
+      // let url = '';
+      // let method = '';
     }
 
     else {
       alert('missing information');
     }
+
   }
 
   handleChangeURL = e => {
@@ -64,10 +56,7 @@ class Form extends React.Component {
             <span className={this.state.method === 'delete' ? 'active' : ''} id="delete" onClick={this.handleChangeMethod}>DELETE</span>
           </label>
         </form>
-        <section className="results">
-          <span className="method">{this.state.request.method}</span>
-          <span className="url">{this.state.request.url}</span>
-        </section>
+        
       </>
     );
   }

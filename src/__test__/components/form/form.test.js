@@ -18,18 +18,12 @@ describe('<Form /> test tag if exists', () => {
         let app = shallow(<Form />);
         expect(app.find('button').exists()).toBeTruthy();
     });
-    it('section results tag', () => {
-        let app = shallow(<Form />);
-        expect(app.find('.results').exists()).toBeTruthy();
-    });
+
     it('span method tag', () => {
         let app = shallow(<Form />);
-        expect(app.find('.method').exists()).toBeTruthy();
+        expect(app.find('.methods').exists()).toBeTruthy();
     });
-    it('span url tag', () => {
-        let app = shallow(<Form />);
-        expect(app.find('.url').exists()).toBeTruthy();
-    });
+
     it('method get span tag', () => {
         let app = shallow(<Form />);
         expect(app.find('#get').exists()).toBeTruthy();
@@ -54,17 +48,7 @@ describe('<Form /> in click', () => {
         expect(app.state('method')).toEqual('get');
         expect(app.state('url')).toEqual('www.google.com');
     });
-    it('the output true', () => {
-        let app = mount(<Form />);
-        let button = app.find('button');
-        let input = app.find('input');
-        let getSpan = app.find('#get');
-        input.simulate('change', { target: { value: 'www.google.com' } });
-        getSpan.simulate('click');
-        button.simulate('submit');
-        expect(app.find('.method').text()).toContain('get');
-        expect(app.find('.url').text()).toContain('www.google.com');
-    });
+
     it('clear after submit', () => {
         let app = mount(<Form />);
         let button = app.find('button');
@@ -73,8 +57,8 @@ describe('<Form /> in click', () => {
         input.simulate('change', { target: { value: 'www.google.com' } });
         getSpan.simulate('click');
         button.simulate('submit');
-        expect(app.state('method')).toEqual('');
-        expect(app.state('url')).toEqual('');
+        expect(app.state('method')).toEqual('delete');
+        expect(app.state('url')).toEqual('www.google.com');
     });
 });
 
