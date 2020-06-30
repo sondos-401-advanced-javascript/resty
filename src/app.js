@@ -19,8 +19,8 @@ class App extends React.Component {
   //   console.log('data =====',data);
   //   this.setState({ Headers, Response: {data} });
   // }
-  handelForm = (data,count,results) => {
-    let Headers = { 'Content-Type': 'application/json' };
+  handelForm = (Headers,data,count,results) => {
+    
     this.setState({count,results, Headers, Response: { data } });
   }
 

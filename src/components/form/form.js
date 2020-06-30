@@ -21,7 +21,8 @@ class Form extends React.Component {
       let data = await raw.json();
       let count = data.count;
       let results = data.results;
-      this.props.handler(data,count,results);
+      let Headers = { 'Content-Type': 'application/json' };
+      this.props.handler(Headers,data,count,results);
       // let url = '';
       // let method = '';
     }
