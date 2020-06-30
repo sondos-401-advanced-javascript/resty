@@ -2,18 +2,34 @@ import React from 'react';
 
 import './app.scss';
 
-// Let's talk about using index.js and some other name in the component folder
-// There's pros and cons for each way of doing this ...
+
 import Header from './components/header';
 import Footer from './components/footer';
 import Form from './components/form/form.js';
+import Results from './components/results/results';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+  // handelForm(data) {
+  //   let Headers = { 'Content-Type': 'application/json' };
+  //   console.log('data =====',data);
+  //   this.setState({ Headers, Response: {data} });
+  // }
+  handelForm = (Headers,data,count,results) => {
+    
+    this.setState({count,results, Headers, Response: { data } });
+  }
+
   render() {
     return (
       <React.Fragment>
         <Header />
-        <Form />
+        <Form handler={this.handelForm} />
+        <Results count={this.state.count} results={this.state.results} Response={this.state.Response} Header={this.state.Headers} />
         <Footer />
       </React.Fragment>
     );
