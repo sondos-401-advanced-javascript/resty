@@ -15,7 +15,7 @@ class Form extends React.Component {
   handleSubmit =async e => {
     e.preventDefault();
 
-    if ( this.state.url && this.state.method ) {
+    if ( this.state.url  ) {
 
       let raw = await fetch(this.state.url); 
       let data = await raw.json();
@@ -27,8 +27,8 @@ class Form extends React.Component {
       // let method = '';
     }
 
-    else {
-      alert('missing information');
+    else if(!this.state.url){
+      alert('missing url');
     }
 
   }
