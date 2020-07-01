@@ -29,5 +29,50 @@ body {
     color: #eee;
     padding: 0;
     margin: 0;
+    h1{
+      float: left;
+    }
+    nav {
+      float: right;
+      align-items: center;
+      ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          margin-top: 1.5rem;
+          margin-right: 1rem;
+          li {
+              display: inline-block;
+              padding: .5rem 2rem;
+              position: relative;
+
+              a {
+                  color: rgb(255, 223, 223);
+                  text-decoration: none;
+
+                  &:after {
+                      bottom: 0;
+                      content: '';
+                      left: 0;
+                      position: absolute;
+                      right: 0;
+                      top: 0;
+                  }
+
+                  &.here, &.here:hover {
+                      color: red;
+                  }
+              }
+
+              &:hover {
+                  background: #111;
+
+                  a {
+                      color: #f5f5f5;
+                  }
+              }
+          }
+      }
+  }
   }
 }
