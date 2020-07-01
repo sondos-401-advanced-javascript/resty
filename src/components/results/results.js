@@ -7,9 +7,6 @@ const results = (props) => {
       <>
         <section className="results">
           <span>"count": {props.count}</span>
-          {/* <div>
-          <ReactView name='results' src={props.results}/>
-          </div> */}
         <div className="method">
         <ReactView name='Headers' src={props.Header}/>
       </div>
