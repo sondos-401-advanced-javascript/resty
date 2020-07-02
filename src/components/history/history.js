@@ -29,10 +29,10 @@ class History extends React.Component {
             return queryLocalStorage.map((item, i) => {
                 if (item.body) {
                     let body = JSON.stringify(item.body);
-                    return <input type='text' readOnly='readonly' onClick={this.handlerClick} key={i} value={`method:  ${item.method}  url:  ${item.url}  body:  ${body}`} />
+                    return <input type='text' onClick={this.handlerClick} key={i} value={`method:  ${item.method}  url:  ${item.url}  body:  ${body}`} />
                 }
                 else {
-                    return <input type='text' readOnly='readonly' onClick={this.handlerClick} key={i} value={`method:  ${item.method}  url:  ${item.url}`} />
+                    return <input type='text' onClick={this.handlerClick} key={i} value={`method:  ${item.method}  url:  ${item.url}`} />
                 }
             });
         }
