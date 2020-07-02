@@ -199,7 +199,7 @@ class Form extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label >
             <span>URL: </span>
-            <input name='url' type='text' onChange={this.handleChangeURL} value={this.props.url}/>
+            <input id='url' name='url' type='text' onChange={this.handleChangeURL} value={this.props.url}/>
             <button type="submit">GO!</button>
           </label>
           <label className="methods">
@@ -211,7 +211,6 @@ class Form extends React.Component {
     <textarea placeholder="Body" name="requestBody"  onChange={this.handelBody} value={this.props.body}></textarea>
         </form>
         <h2>History</h2>
-        <p>press on history then press Go!</p>
         <Link to='/'>
         <History handel={this.handelHistory}/>
         </Link>

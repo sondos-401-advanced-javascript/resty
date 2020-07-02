@@ -24,9 +24,9 @@ class History extends React.Component {
 
     getDataLocal() {
         let queryLocalStorage = JSON.parse(localStorage.getItem('query'));
-        let items = [];
+       
         if (queryLocalStorage) {
-            return items = queryLocalStorage.map((item, i) => {
+            return queryLocalStorage.map((item, i) => {
                 if (item.body) {
                     let body = JSON.stringify(item.body);
                     return <input type='text' readOnly='readonly' onClick={this.handlerClick} key={i} value={`method:  ${item.method}  url:  ${item.url}  body:  ${body}`} />
@@ -41,12 +41,15 @@ class History extends React.Component {
 
     render() {
         return (
+            <>
+        <p>press on history it will return you to home page then press Go!</p>
             <ul>
                 <Link to='/'>
                 {this.getDataLocal()}
                 </Link>
                 
             </ul>
+            </>
         )
     }
 }

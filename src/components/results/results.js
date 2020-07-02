@@ -6,6 +6,7 @@ import { IfRenderer, Then, Else } from '../if/if';
 const results = (props) => {
     return (
       <>
+      <h2>Results</h2>
       <IfRenderer condition={!props.loading} >
         <Then>
         <section>
