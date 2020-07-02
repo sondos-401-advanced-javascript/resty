@@ -199,7 +199,7 @@ class Form extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label >
             <span>URL: </span>
-            <input id='url' name='url' type='text' onChange={this.handleChangeURL} value={this.props.url}/>
+            <input id='url' name='url' type='text' onChange={this.handleChangeURL}/>
             <button type="submit">GO!</button>
           </label>
           <label className="methods">
@@ -208,7 +208,7 @@ class Form extends React.Component {
             <span className={this.state.method === 'put' ? 'active' : ''} id="put" onClick={this.handleChangeMethod}>PUT</span>
             <span className={this.state.method === 'delete' ? 'active' : ''} id="delete" onClick={this.handleChangeMethod}>DELETE</span>
           </label>
-    <textarea placeholder="Body" name="requestBody"  onChange={this.handelBody} value={this.props.body}></textarea>
+    <textarea placeholder="Body" name="requestBody"  onChange={this.handelBody}></textarea>
         </form>
         <h2>History</h2>
         <Link to='/'>
