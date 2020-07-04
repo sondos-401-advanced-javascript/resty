@@ -210,10 +210,7 @@ class Form extends React.Component {
           </label>
     <textarea placeholder="Body" name="requestBody"  onChange={this.handelBody}></textarea>
         </form>
-        <h2>History</h2>
-        <Link to='/'>
-        <History handel={this.handelHistory}/>
-        </Link>
+       
         
       </>
     );
