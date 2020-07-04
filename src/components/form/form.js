@@ -1,6 +1,5 @@
 import React from 'react';
-import History from '../history/history';
-import {Link} from 'react-router-dom';
+
 import './form.scss';
 
 class Form extends React.Component {
@@ -166,6 +165,7 @@ class Form extends React.Component {
         localStorage.setItem('query',JSON.stringify(this.requestQuery));
     }
     /////
+   
     }
 
     else if (!this.state.url) {
