@@ -38,34 +38,5 @@ describe('<Form /> test tag if exists', () => {
     });
 });
 
-describe('<Form /> in click', () => {
-    it('input ', () => {
-        let app = mount(<Form />);
-        let input = app.find('input');
-        let getSpan = app.find('#get');
-        input.simulate('change', { target: { value: 'www.google.com' } });
-        getSpan.simulate('click');
-        expect(app.state('method')).toEqual('get');
-        expect(app.state('url')).toEqual('www.google.com');
-    });
 
-    it('clear after submit', () => {
-        let app = mount(<Form />);
-        let button = app.find('button');
-        let input = app.find('input');
-        let getSpan = app.find('#delete');
-        input.simulate('change', { target: { value: 'www.google.com' } });
-        getSpan.simulate('click');
-        button.simulate('submit');
-        expect(app.state('method')).toEqual('delete');
-        expect(app.state('url')).toEqual('www.google.com');
-    });
-});
-
-describe('snapshot style', () => {
-    it('style of tree ', () => {
-        const tree = renderer.create(<Form />).toJSON();
-        expect(tree).toMatchSnapshot();
-    });
-});
 
